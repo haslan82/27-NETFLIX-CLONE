@@ -1,5 +1,8 @@
 import axios from "axios";
 
+
+
+// api den popüler filmleri alıp reducera aktaran bir asekron thunk fonksiyonu
 export default axios.create({
     baseURL:"https://api.themoviedb.org/3",
 
@@ -7,8 +10,8 @@ export default axios.create({
     headers: {
         accept: 'application/json',
 
-        //yetkilendirme
-        Authorization: ` Bearer ${import.meta.VITE_API_KEY} ` ,
+        //yetkilendirmeBearer ${import.meta.VITE_API_KEY
+        Authorization: ` Bearer ${import.meta.env.VITE_API_KEY} ` ,
       },
       params:{
         language:"tr-TR",

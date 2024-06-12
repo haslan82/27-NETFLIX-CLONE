@@ -3,7 +3,11 @@ const initialState = {
     error: null,
     genres: [],
   }
-const genreReducer=(state = initialState , action)=>{
+const genreReducer = (state = initialState , { type, payload })=>{
+  console.log(type)
+  switch(type){
+    
+  }
 return state;
 };
 
