@@ -17,8 +17,8 @@ const movieReducer = (state = initialState, action) => {
       return { ...state, isLoading: false, error: payload };
 
       case ActionTypes.MOVIES_SUCCESS:
-        console.log(payload)
-      console.log(type)
+      //   console.log(payload)
+      // console.log(type)
 return {...state, isLoading: false, error: null, movies: payload.results
 
 }
