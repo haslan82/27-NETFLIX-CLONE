@@ -1,11 +1,8 @@
-import React from 'react'
+
 
 const Error = () => {
-  return (
-    <div>
-      hata
-    </div>
-  )
-}
+  return <div>error</div>;
+};
 
 export default Error;
+

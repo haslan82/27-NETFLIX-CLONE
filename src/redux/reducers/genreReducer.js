@@ -12,14 +12,22 @@ const genreReducer = (state = initialState, { type, payload }) => {
       return { ...state, isLoading: true };
 
     case ActionTypes.GENRES_ERROR:
+      console.log(type);
+      console.log(payload);
+      
 
       
+
       return {...state, isLoading: false, error: null, genres: payload}
-// console.log(type);
+
+      // console.log(type);
 //       console.log(payload);
+
     case ActionTypes.GENRES_SUCCESS:
+
+
       //console.log(payload)
-      return { ...state, isloading: false, error: null, genres: payload };
+      return { ...state, isLoading: false, error: null, genres: payload };
   }
   return state;
 };

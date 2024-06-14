@@ -28,6 +28,6 @@ return {...state, isLoading: false, error: null, movies: payload.results
 
   };
 
-};
+}
 
 export default movieReducer;
