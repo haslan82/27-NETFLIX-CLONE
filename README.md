@@ -38,7 +38,7 @@
 
 
 
-
+<!-- 
 ## Kütüphaneler
 
 - react-router-dom
@@ -52,4 +52,4 @@
 
 - API:https://developer.themoviedb.org/reference/intro/getting-started
 
-<img src="screen1.gif">
+<img src="screen1.gif"> -->
