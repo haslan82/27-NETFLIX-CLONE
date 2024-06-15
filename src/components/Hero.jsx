@@ -1,30 +1,30 @@
 import { useSelector } from "react-redux";
 import Loader from "./Loader";
 import Error from "./Error";
+import { baseImgUrl } from "../constants";
 
 
 const Hero = () => {
   const { isLoading, error, movies } = useSelector((store) => store.movies);
-  console.log(movies);
+const i = Math.floor( Math.random()* movies.length);
+// console.log(i)
+const movie = movies[i];
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 md:max-h-[400px] gap-5 mb-10 ">
-      {!movies || isLoading ? (
+      {!movie || isLoading ? (
         <Loader />
       ) : error ? (
         < Error />
       ) : (
         <>
           <div className="flex flex-col gap-6 justify-center items-center">
-            <h1 className="text-3xl font-bold">Tarot</h1>
+            <h1 className="text-3xl font-bold">{movie.title} </h1>
             <p className="text-start">
-              Bir grup arkadaş, Tarot fallarının kutsal kuralını pervasızca
-              ihlal ettiğinde bilmeden, lanetli kartların içinde hapsolmuş,
-              anlatılamaz bir kötülüğü serbest bırakırlar. Birer birer kaderle
-              yüzleşirler ve ölümle yarışırlar.
+             {movie?.overview}
             </p>
             <p>
               <span className="">IMDB :</span>
-              <span className="text-yellow-400 ms-2 font-semibold">6.5</span>
+              <span className="text-yellow-400 ms-2 font-semibold">{movie.vote_average.toFixed(1)} </span>
             </p>
             <div className="flex gap-5">
               <button className="p-2  bg-red-600 rounded hover:bg-red-700">
@@ -39,8 +39,8 @@ const Hero = () => {
       )}
       <div>
         <img
-          className=" hero-img my-4 object-contain rounded max-h-[300px] "
-          src="https://image.tmdb.org/t/p/original/oavbmL3iddJUmC8nQjL6bLHwAP4.jpg"
+          className=" hero-img my-4 md:mx-3 object-contain rounded max-h-[300px] "
+          src={baseImgUrl + movie?.backdrop_path}
           alt=""
         />
       </div>
